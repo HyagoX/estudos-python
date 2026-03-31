@@ -1,0 +1,9 @@
+New Person added:
+ Name: John
+ Age:18
+----------------------------------
+New Worker added:
+ Name: John
+ Age: 18
+ Salary: 1512
+----------------------------------
