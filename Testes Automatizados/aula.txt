@@ -1,0 +1,18 @@
+# Teste nada mais é do que um trecho de código que usa uma parte do sistema, ou o sistema inteiro, para verificar se ele está funcionando como o esperado
+# Existem 3 tipos principais:
+# Teste unitário
+# Teste de integração
+# Teste de Sistema / end-to-end / e2e
+
+# Unitario
+# É quando escrevemos um código que testa um item especifico do código, por exemplo uma função
+
+# Teste de integração
+# Testa uma funcionalidade específica, várias funções que sao usadas pra fazer um sistema de login. Poderiamos testar uma função que verifica se a senha está certa por exemplo
+
+# end-to-end
+# Este seria um teste geral do sistema inteiro. Fazendo tudo que um usuário faria
+
+# Existem bibliotecas usadas para automatizar esses testes
+
+# Existe uma convenção para criar testes com PyTest, vamos criar arquivos especificos para usar os testes, qualquer arquivo com o prefixo test_... será achado pela biblioteca pytest
