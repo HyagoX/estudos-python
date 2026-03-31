@@ -12,3 +12,4 @@
 # Para instalar uma biblioteca com o pip utilizamos o comando no terminal 'pip install 'nome da biblioteca''
 # Para desinstalar, basta utilizar 'pip uninstall 'nome da biblioteca''
 # Utilize o site 'pypi.org' para encontrar novas bibliotecas
+

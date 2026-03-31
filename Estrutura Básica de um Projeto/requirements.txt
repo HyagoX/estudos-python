@@ -1,0 +1,8 @@
+certifi==2026.2.25
+charset-normalizer==3.4.6
+idna==3.11
+requests==2.33.1
+urllib3==2.6.3
+
+# Utilizamos esse arquivo como uma anotação das versões de bibliotecas usadas no nosso projeto. Ele mostra quais bibliotecas e quais as versões, esse arquivo pode ser utilizado com o comando 'pip freeze > requirements.txt'
+# Depois, outra pessoa, ou voce mesmo do futuro, ao retornar pro projeto, cria o ambiente virtual, ativa o venv, e pode rodar o comando 'pip install requirements.txt' e entao todas as bibliotecas serão instaladas automaticamente

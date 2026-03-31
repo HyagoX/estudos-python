@@ -14,3 +14,4 @@ print(os.getcwd())
 
 # Retorna um array com todos os arquivos dentro de uma pasta. Se utilizarmos '.' mostra os arquivos dentro da própria pasta do script
 print(os.listdir('.'))
+

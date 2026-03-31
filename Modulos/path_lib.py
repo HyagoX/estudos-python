@@ -1,7 +1,7 @@
 # Importa a biblioteca inteira com todas as funcionalidades
 import pathlib
 # Importa uma unica parte da biblioteca
-from pathlib import path
+from pathlib import Path
 
 # Salva o arquivo ou pasta dentro de uma variavel
 test_folder = pathlib.Path('teste')
