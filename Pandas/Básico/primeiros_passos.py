@@ -18,3 +18,4 @@ print(df_pandas)
 
 # Essa é a ferramenta que faz toda etada de ETL = Extract, Transform e Load
 # Quando se faz um projeto com uma base de dados, precisamos extrair os dados dessa base(Extract). Então transformar esses dados para poder serem utilizados da melhor forma(Transformar), e por fim carregar esses dados(Load). Porem no pandas, alem de carregar esses dados, é possivel com essa biblioteca fazer as análises dentro dela
+
