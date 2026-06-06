@@ -1,0 +1,25 @@
+Existem métodos para uma requisição HTTP, o principal método é o GET, usado no arquivo requests.py, por isso usamos o comando requests.get()
+
+Existem outros métodos, podemos fazer uma análogia entre cada um desses métodos e oque seria o CRUD de um banco de dados, que no caso seria
+C = Create
+R = Read
+U = Update
+D = Delete
+
+Essa 4 operações básicas formam um banco de dados, e existem métodos que funcionam para cada uma dessas operações, que são os seguintes:
+Post = Criar um novo dado
+Get = Pegar um Dado 
+Put = Atualizar um Dado
+Patch = Atualizar um Dado parcialmente
+Delete = Deletar um Dado
+
+Existem alguns outros métodos, mas esses 5 são os principais, e entre eles, o GET e o POST serão ainda mais utilizados
+
+O Request tem 3 componentes básicos dentro de si mesmo
+Header(cabeçalho) = Inclui vários metadados que identificam o request enviado, incluem qual o valor utilizado, ou a linguagem de programação utilizada pra fazer o request, inclui o sistema operacional, o idioma, o tipo de arquivo, etc
+Body(corpo) = Inclui todas as informações necessarias de acordo com oque foi pedido pelo seu requests, sendo eles de recebimento(GET), ou de envio(POST)
+Parametros = Sao valores que vao ficar no final do URL, que identificam a request, sao muito utilizados para fazer filtros,
+
+Códigos de Status das Requests:
+200 = Sucesso na Requisição
+405 = Foi utilizado um método incorreto, por exemplo, usar um POST quando se deveria utilizar um método GET

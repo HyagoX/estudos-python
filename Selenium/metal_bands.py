@@ -32,15 +32,18 @@ for link in links:
 
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "discog")))
         
-        elemento_ano = driver.find_element(By.XPATH, "(//table[contains(@class, 'discog')]//tr)[last()]/td[last()-1]")
-        album_year = elemento_ano.get_attribute('innerText').strip()
-        
         raw_name = link.split("/")[-2]
         band_name = unquote(raw_name).replace("_", " ")
+        try:
+            country_element = driver.find_element(By.XPATH, "//*[contains(text(), 'Brazil')]")
+            band_country = country_element.get_attribute('innerText').strip()
+            with open('bandas.csv', 'a+', encoding='utf-8') as file:
+                file.write(f'{band_name};{band_country}\n')
+            print(f'{band_name} é brasileira, adicionando a lista')
+        except:
+            pass
         
-        with open('bandas.csv', 'a+', encoding='utf-8') as file:
-            file.write(f'{band_name};{album_year}\n')
-            
+        
     except Exception as e:
         print(f'❌ Erro ao processar a banda {link.split("/")[-2]}: {e}')
     
@@ -49,6 +52,6 @@ for link in links:
             driver.switch_to.window(driver.window_handles[0])
     except:
         print("🚨 Sessão perdida!")
-        break 
+        break
     
     time.sleep(random.uniform(1, 3))
