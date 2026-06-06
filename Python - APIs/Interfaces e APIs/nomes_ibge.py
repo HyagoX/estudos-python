@@ -24,4 +24,4 @@ def verify_name(nome, sexo='Nones', localidade='None'):
     
     print(response[0]['res'])
 
-verify_name('Hyago', 'F')
+verify_name('Joana')
