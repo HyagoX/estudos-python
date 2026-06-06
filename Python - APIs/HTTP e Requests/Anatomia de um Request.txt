@@ -17,9 +17,35 @@ Existem alguns outros métodos, mas esses 5 são os principais, e entre eles, o 
 
 O Request tem 3 componentes básicos dentro de si mesmo
 Header(cabeçalho) = Inclui vários metadados que identificam o request enviado, incluem qual o valor utilizado, ou a linguagem de programação utilizada pra fazer o request, inclui o sistema operacional, o idioma, o tipo de arquivo, etc
-Body(corpo) = Inclui todas as informações necessarias de acordo com oque foi pedido pelo seu requests, sendo eles de recebimento(GET), ou de envio(POST)
+Body(corpo) = Inclui todas as informações necessarias de acordo com oque foi pedido pelo seu requests comumente enviadas atraves dos métodos POST, PATCH, PUT, pois os métodos GET, normalmente não tem Body.
 Parametros = Sao valores que vao ficar no final do URL, que identificam a request, sao muito utilizados para fazer filtros,
 
 Códigos de Status das Requests:
-200 = Sucesso na Requisição
-405 = Foi utilizado um método incorreto, por exemplo, usar um POST quando se deveria utilizar um método GET
+Status 1xx: Informativo
+100 Continue = O servidor recebeu o cabeçalho da requisição e o cliente deve continuar com o corpo da requisição
+101 Switching Protocols = O servidor está mudando os protocolos conforme solicitado pelo cliente
+
+Status 2xx: Sucesso
+200 Ok = Sucesso na Requisição
+201 Created = A requisição foi bem sucedida e um novo recurso foi criado
+204 No Content = A requisição foi bem sucedida mas não há conteudo para retornar
+
+Status 3xx: Redirecionamento
+301 Moved Permanently = O Recurso solicitado foi movido permanentemente para uma nova URL
+302 Found = O recurso solicitado foi encontrado mas em uma URL diferente temporáriamente
+304 Not Modified = O recurso não foi modificado desde a ultima requisição
+
+Status 4xx: Erro do Cliente
+400 Bad Request = A requisição é invalida ou malformada
+401 Unauthorized = Autenticação é necessária e falhou  ou não foi fornecida
+403 Forbidden = O servidor entendeu a requisição mas se recusa a autorizá-la
+404 Not Found = O recurso solicitado não foi encontrado  
+405 Method Not Allowed = Foi utilizado um método incorreto, por exemplo, usar um POST quando se deveria utilizar um método GET
+429 Too many requests = O cliente enviou muitas requisições em um curto período de tempo
+
+Status 5xx: Erros do servidor
+500 Internal Server Error = O servidor encontrou uma condição inesperada que impediu a execução da requisição
+501 Not Implemented = O servidor não suporta a funcionalidade necessária para atender a requisição
+502 Bad Gateway = O servidor, ao atuar como gateway ou proxy, recebeu uma resposta inválida do servidor upstream
+503 Service Unavaible: O servidor não está disponível para processar a requisição no momento(por exemplo, devido a manutenção)
+504 Gateway Timeout = O servidor, ao atuar como gateway ou proxy, não recebeu uma resposta a tempo do servidor upstream

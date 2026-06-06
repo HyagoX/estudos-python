@@ -1,0 +1,10 @@
+RE = Representational
+S = State
+T = Transfer
+
+Transferencia de estado representacional, um nome completamente abstrato, desenvolvido por Roy Fielding em 2000 durante o seu doutorado, para resolver o problema de: Como eu poderia desenvolver um sistema de informação, onde a troca de informações vai acontecer de uma forma interconectada e escalável", por exemplo, quando temos 3 pessoas trocando informações em um sistema, é simples trocar de um por outro, no entanto, quando pensamos na internet inteira, isso fica um pouco mais complexo, pois temos servidores, clientes informações chegando de todos os lados ao mesmo tempo. REST, é como se fosse as melhores praticas para que a troca de informações seja a melhor possível. Para o REST funcionar, precisa-se de um cliente e de um servidor, REST exige que a comunicação seja stateless. Isso significa que cada requisição deve conter todas as informações necessárias para ser processada, sem depender de informações armazenadas de requisições anteriores.
+Outro ponto necessário para ser uma API REST, é que ela precisa ter recursos identificados por identificadores únicos, aqui, entramos na ideia do que seriam as URIs=Uniform Resource Identifier, identificadores de recurso únicos, que na prática, vao ser como as URLs, mas existe uma diferença teorica, as url apontam pra uma localização especifica, em uma pasta tal dentro de um servidor, enquanto as URIs representam um recurso, que pode ser um arquivo dentro de um servidor, ou de algum outro banco de dados, ou até mesmo de uma outra API chamada pelo servidor. Existem outros detalhes como cacheamento e diversos outros detalhes menores que formam uma API Rest, no entanto vamos focar somente no necessário
+
+Importante dizer que:
+Toda URL é uma URI.
+Nem toda URI é uma URL.
