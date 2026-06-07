@@ -23,5 +23,6 @@ def verify_name(nome, sexo='Nones', localidade='None'):
         return
     
     print(response[0]['res'])
+        url = f'https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}'
 
 verify_name('Joana')
