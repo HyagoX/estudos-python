@@ -2,10 +2,10 @@ import requests
 from pprint import pprint
 
 
-def request(url):
+def request(url, params=None):
 
 
-    response = requests.get(url)
+    response = requests.get(url, params=params)
     try:
         response.raise_for_status()
     except requests.HTTPError as e:
@@ -22,7 +22,7 @@ def verify_state(nome='None', sexo='Nones', localidade='None'):
 
     for i, element in enumerate(response):
         nome = element['nome']
-        identif = element['id']
+        identif = int(element['id'])
         estados_dict[identif] = nome
     return(estados_dict)
     
@@ -40,4 +40,42 @@ def verify_town(uf_id='None', uf_name='None'):
     if town == '':
         print('Cidade nao existe ou nome está incorreto')
 
-verify_town(uf_name='Araguaína')
+def verify_name(nome, sexo='Nones', localidade=None):
+    url = f'https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}'
+
+    params = {
+        'sexo': sexo,
+        'localidade': localidade
+    }
+    response = request(url, params)
+
+    if not response:
+        print('Nenhum resultado encontrado para esses parametros')
+        return
+
+    estados = verify_state()
+
+    estado = 'Não informado!'
+
+    if localidade != None:
+        estado = estados[localidade]
+
+    frequencias = response[0]["res"]
+
+    if response[0]['sexo'] == None:
+        response[0]['sexo'] = 'Ambos'
+
+    print(f'''
+        Nome: {response[0]['nome']}
+        Sexo: {response[0]['sexo']}
+        Estado: {estado}
+    ''')
+
+    total = 0
+
+    for item in frequencias:
+        total += item['frequencia']
+        print(f"Período: {item['periodo']} - Frequência: {item['frequencia']}")
+    print(f'Total: {total}')
+
+verify_name('Joana', localidade=32)
